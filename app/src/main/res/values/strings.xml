@@ -4,4 +4,14 @@
     <string name="home_button_patients">Pacientes</string>
     <string name="home_button_queries">Consultas</string>
     <string name="home_textTitle">Clinic Control</string>
+    <string name="home_section_to_start_text">Escolha qual seção deseja iniciar:</string>
+    <string name="card_name_example">Leandro Santiago da Silva</string>
+    <string name="card_specialty_example">Especialidade</string>
+    <string name="card_separateicon">" | "</string>
+    <string name="card_CRM_example">CRM 15.879-AM</string>
+    <string name="card_email_example">email@email.com</string>
+    <string name="card_phoneNumber_example">(92) 99999-8888</string>
+    <string name="card_address_example">Av. Barrasano 633, Cidade Nova - Manaus/AM CEP:69098-030</string>
+    <string name="card_btn_edit">Editar</string>
+    <string name="card_btn_deactivateProfile">Desativar Perfil</string>
 </resources>

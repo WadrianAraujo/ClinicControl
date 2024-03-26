@@ -33,7 +33,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escolha qual seção seja iniciar:"
+        android:text="@string/home_section_to_start_text"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_doctors"
         app:layout_constraintStart_toStartOf="@+id/btn_doctors" />
 
@@ -44,7 +46,7 @@
         android:layout_marginTop="84dp"
         android:backgroundTint="@color/logo_principal_color"
         android:text="@string/home_button_doctors"
-        android:textColor="@color/logo_secondary_color"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +60,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/logo_principal_color"
         android:text="@string/home_button_patients"
-        android:textColor="@color/logo_secondary_color"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +74,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/logo_principal_color"
         android:text="@string/home_button_queries"
-        android:textColor="@color/logo_secondary_color"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:cornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
