@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Clinic Control</string>
+    <string name="home_button_doctors">Médicos</string>
+    <string name="home_button_patients">Pacientes</string>
+    <string name="home_button_queries">Consultas</string>
+    <string name="home_textTitle">Clinic Control</string>
 </resources>
