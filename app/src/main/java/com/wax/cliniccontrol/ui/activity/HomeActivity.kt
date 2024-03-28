@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToListDoctors() {
-        val intent = Intent(this,ListDoctorsActivity::class.java)
+        val intent = Intent(this, ListDoctorsActivity::class.java)
         startActivity(intent)
     }
 }

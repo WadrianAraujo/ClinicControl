@@ -1,4 +1,41 @@
 <resources>
+    <string-array name="specialty">
+        <item>Ortopedia</item>
+        <item>Cardiologia</item>
+        <item>Ginecologia</item>
+        <item>Dermatologia</item>
+    </string-array>
+
+    <string-array name="uf">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+    </string-array>
+    
     <string name="app_name">Clinic Control</string>
     <string name="home_button_doctors">Médicos</string>
     <string name="home_button_patients">Pacientes</string>
@@ -14,4 +51,7 @@
     <string name="card_address_example">Av. Barrasano 633, Cidade Nova - Manaus/AM CEP:69098-030</string>
     <string name="card_btn_edit">Editar</string>
     <string name="card_btn_deactivateProfile">Desativar Perfil</string>
+    <string name="toolbar_title_listDoctors">Médicos</string>
+    <string name="toolbar_title_formDoctorsCreate">Novo perfil</string>
+    <string name="toolbar_title_formDoctorsEdit">Editar</string>
 </resources>
