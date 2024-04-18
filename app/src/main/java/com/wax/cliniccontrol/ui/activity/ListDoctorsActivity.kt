@@ -2,11 +2,19 @@ package com.wax.cliniccontrol.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.wax.cliniccontrol.R
+import com.wax.cliniccontrol.api.RetrofitInstance
 import com.wax.cliniccontrol.dao.DoctorsDao
 import com.wax.cliniccontrol.databinding.ActivityListDoctorsBinding
+import com.wax.cliniccontrol.model.doctor.Doctor
 import com.wax.cliniccontrol.ui.recyclerview.adapter.ListDoctorsAdapter
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Retrofit
 
 
 class ListDoctorsActivity : AppCompatActivity() {
@@ -25,6 +33,13 @@ class ListDoctorsActivity : AppCompatActivity() {
         setupToolbar()
         setupListeners()
         setupRecyclerView()
+        lifecycleScope.launch(IO){
+            val call: Call<List<Doctor>> = RetrofitInstance().doctorService.getAll()
+            val response = call.execute()
+            response.body()?.let { doctors ->
+                Log.i("ListDoctors", "onCreate: $doctors")
+            }
+        }
     }
 
     override fun onResume() {

@@ -48,6 +48,17 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    // Lifecycle
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
     // Splash
     implementation(libs.androidx.core.splashscreen)
 
