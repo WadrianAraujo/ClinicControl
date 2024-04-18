@@ -1,6 +1,6 @@
 package com.wax.cliniccontrol.model.address
 
-class Address(
+data class Address(
     val street: String,
     val neighborhood: String,
     val cep: String,

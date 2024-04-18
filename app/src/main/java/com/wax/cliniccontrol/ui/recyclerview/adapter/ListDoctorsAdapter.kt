@@ -4,59 +4,39 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.wax.cliniccontrol.R
+import com.wax.cliniccontrol.databinding.ExpandableCardLayoutBinding
 import com.wax.cliniccontrol.model.doctor.Doctor
 
 class ListDoctorsAdapter(
     private val content: Context,
-    private val doctors: List<Doctor>
+    doctors: List<Doctor>
 ) : RecyclerView.Adapter<ListDoctorsAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    private val doctors = doctors.toMutableList()
+
+    class ViewHolder(private val binding: ExpandableCardLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(doctor: Doctor) {
-            val name = itemView.findViewById<TextView>(R.id.tv_name)
-            name.text = doctor.name
+            binding.tvName.text = doctor.name
+            binding.tvSpecialty.text = doctor.specialty.toString()
+            binding.tvCrm.text = "CRM ${doctor.crm}"
+            binding.tvEmail.text = doctor.email
+            binding.tvPhoneNumber.text = doctor.phone
+            binding.tvAddress.text = doctor.address.toString()
 
-            val specialty = itemView.findViewById<TextView>(R.id.tv_specialty)
-            specialty.text = doctor.specialty.toString()
-
-            val crm = itemView.findViewById<TextView>(R.id.tv_crm)
-            crm.text = "CRM " + doctor.crm
-
-            val email = itemView.findViewById<TextView>(R.id.tv_email)
-            email.text = doctor.email
-
-            val phone = itemView.findViewById<TextView>(R.id.tv_phoneNumber)
-            phone.text = doctor.phone
-
-            val address = itemView.findViewById<TextView>(R.id.tv_address)
-            address.text = doctor.address.toString()
-
-            val btnExpand = itemView.findViewById<ImageView>(R.id.btn_expand)
-            btnExpand.setOnClickListener {
-                val content = itemView.findViewById<ViewGroup>(R.id.expandingContentLayout)
-                if (content.visibility == View.VISIBLE){
-                    content.visibility = View.GONE
-                }else{
-                    content.visibility = View.VISIBLE
-                }
-
+            binding.btnExpand.setOnClickListener {
+                val content = binding.expandingContentLayout
+                content.visibility =
+                    if (content.visibility == View.VISIBLE) View.GONE else View.VISIBLE
             }
         }
-
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(content)
-        val view = inflater.inflate(R.layout.expandable_card_layout, parent, false)
-        return ViewHolder(view)
+        val binding = ExpandableCardLayoutBinding.inflate(inflater, parent, false)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -66,6 +46,12 @@ class ListDoctorsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val doctor = doctors[position]
         holder.bind(doctor)
+    }
+
+    fun updateList(doctors: List<Doctor>) {
+        this.doctors.clear()
+        this.doctors.addAll(doctors)
+        notifyDataSetChanged()
     }
 
 }
